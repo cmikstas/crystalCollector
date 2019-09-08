@@ -54,6 +54,10 @@ $(document).ready(function()
        $("#scoreUpdate").html(totalScore);
     });
 
+    //pseudo code//
+    //create a checkScore function if totalScore === target score win++ and reset the game. else if current score > target loss++, reset game.//
+    //reset can't reset wins/losses section//
+
     //**FUNCTION SECTION**//
 
     //function for generating random number user needs to hit to win//
