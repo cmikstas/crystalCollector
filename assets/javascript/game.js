@@ -29,6 +29,7 @@ $(document).ready(function()
        totalScore = totalScore + redCrystal;
        console.log(totalScore);
        $("#scoreUpdate").html(totalScore);
+       checkScore();
     });
 
     $("#blueCrystal").on("click", function()
@@ -36,6 +37,7 @@ $(document).ready(function()
        totalScore = totalScore + blueCrystal;
        console.log(totalScore);
        $("#scoreUpdate").html(totalScore);
+       checkScore();
     });
 
     $("#yellowCrystal").on("click", function()
@@ -43,6 +45,7 @@ $(document).ready(function()
        totalScore = totalScore + yellowCrystal;
        console.log(totalScore);
        $("#scoreUpdate").html(totalScore);
+       checkScore();
     });
 
     $("#greenCrystal").on("click", function()
@@ -50,11 +53,15 @@ $(document).ready(function()
        totalScore = totalScore + greenCrystal;
        console.log(totalScore);
        $("#scoreUpdate").html(totalScore);
+       checkScore();
     });
+
 
     //pseudo code//
     //create a checkScore function if totalScore === target score win++ and reset the game. else if current score > target loss++, reset game.//
     //reset can't reset wins/losses section//
+
+
 
     //**FUNCTION SECTION**//
 
@@ -109,6 +116,34 @@ $(document).ready(function()
                 isRepeated = true;
                 console.log("Duplicate3") 
             }
+        }
+    }
+
+    //function to check the score on each button click, track wins/losses, and reset the game depending on what happened//
+    function checkScore()
+    {
+        if(totalScore === numberToWin)
+        {
+            wins++;
+            console.log("Wins " + wins + ", Losses " + losses);
+            $("#win").html("Wins: " + wins);
+            numberToWin = numberToStart(19, 121);
+            console.log(numberToWin);
+            $("#randomNum").html(numberToWin);
+            crystalValuesDupeCheck();
+            totalScore = 0;
+        }
+
+        else if(totalScore > numberToWin)
+        {
+            losses++
+            console.log("Wins " + wins + ", Losses " + losses);
+            $("#loss").html("losses: " + losses);
+            numberToWin = numberToStart(19, 121);
+            console.log(numberToWin);
+            $("#randomNum").html(numberToWin);
+            crystalValuesDupeCheck();
+            totalScore = 0;
         }
     }
 });
