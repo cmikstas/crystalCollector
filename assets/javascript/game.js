@@ -1,6 +1,5 @@
 $(document).ready(function()
 {
-
     //Declared Global Variables//
     var numberToWin = 0;
     var wins = 0;
@@ -22,7 +21,6 @@ $(document).ready(function()
         console.log(numberToWin);
         $("#randomNum").html(numberToWin);
         crystalValuesDupeCheck()
-
     });
 
     //code that adds crystal values to total score//
