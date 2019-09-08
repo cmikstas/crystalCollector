@@ -21,47 +21,12 @@ $(document).ready(function()
         numberToWin = numberToStart(19, 121);
         console.log(numberToWin);
         $("#randomNum").html(numberToWin);
+        crystalValuesDupeCheck()
 
-        //random number generation for all crystal values. placed in while loop so no duplicate values are appear.//
-        while(isRepeated)
-        {
-            isRepeated = false;
-            redCrystal = crystalValues(1, 13);
-            console.log(redCrystal);
-            $("#redCrystal").html(redCrystal + " Red Crystal");
-
-            blueCrystal = crystalValues(1, 13);
-            console.log(blueCrystal);
-            $("#blueCrystal").html(blueCrystal + " Blue Crystal");
-
-            yellowCrystal = crystalValues(1, 13);
-            console.log(yellowCrystal);
-            $("#yellowCrystal").html(yellowCrystal + " Yellow Crystal");
-
-            greenCrystal = crystalValues(1, 13);
-            console.log(greenCrystal);
-            $("#greenCrystal").html(greenCrystal + " Green Crystal");
-
-            if(redCrystal === blueCrystal || redCrystal === greenCrystal || redCrystal === yellowCrystal)
-            {
-                isRepeated = true;
-                console.log("Duplicate1")
-            }
-            
-            if(blueCrystal === yellowCrystal || blueCrystal === greenCrystal)
-            {
-                isRepeated = true;
-                console.log("Duplicate2") 
-            }
-
-            if(yellowCrystal === greenCrystal)
-            {
-                isRepeated = true;
-                console.log("Duplicate3") 
-            }
-        }
     });
 
+    //**FUNCTION SECTION**//
+    
     //function for generating random number user needs to hit to win//
     function numberToStart(min, max)
     {
@@ -74,4 +39,45 @@ $(document).ready(function()
         return Math.floor(Math.random() * (max - min) + min);
     }
 
+    //random number generation for all crystal values. placed in while loop so no duplicate values are appear.//
+    function crystalValuesDupeCheck()
+    {
+        while(isRepeated)
+        {
+            isRepeated = false;
+            redCrystal = crystalValues(1, 13);
+            console.log(redCrystal);
+            $("#redCrystal").html(redCrystal + " Red Crystal");
+    
+            blueCrystal = crystalValues(1, 13);
+            console.log(blueCrystal);
+            $("#blueCrystal").html(blueCrystal + " Blue Crystal");
+    
+            yellowCrystal = crystalValues(1, 13);
+            console.log(yellowCrystal);
+            $("#yellowCrystal").html(yellowCrystal + " Yellow Crystal");
+    
+            greenCrystal = crystalValues(1, 13);
+            console.log(greenCrystal);
+            $("#greenCrystal").html(greenCrystal + " Green Crystal");
+    
+            if(redCrystal === blueCrystal || redCrystal === greenCrystal || redCrystal === yellowCrystal)
+            {
+                isRepeated = true;
+                console.log("Duplicate1")
+            }
+                
+            if(blueCrystal === yellowCrystal || blueCrystal === greenCrystal)
+            {
+                isRepeated = true;
+                console.log("Duplicate2") 
+            }
+    
+            if(yellowCrystal === greenCrystal)
+            {
+                isRepeated = true;
+                console.log("Duplicate3") 
+            }
+        }
+    }
 });
