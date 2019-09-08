@@ -25,21 +25,50 @@ $(document).ready(function()
 
     });
 
+    //code that adds crystal values to total score//
+    $("#redCrystal").on("click", function()
+    {
+       totalScore = totalScore + redCrystal;
+       console.log(totalScore);
+       $("#scoreUpdate").html(totalScore);
+    });
+
+    $("#blueCrystal").on("click", function()
+    {
+       totalScore = totalScore + blueCrystal;
+       console.log(totalScore);
+       $("#scoreUpdate").html(totalScore);
+    });
+
+    $("#yellowCrystal").on("click", function()
+    {
+       totalScore = totalScore + yellowCrystal;
+       console.log(totalScore);
+       $("#scoreUpdate").html(totalScore);
+    });
+
+    $("#greenCrystal").on("click", function()
+    {
+       totalScore = totalScore + greenCrystal;
+       console.log(totalScore);
+       $("#scoreUpdate").html(totalScore);
+    });
+
     //**FUNCTION SECTION**//
-    
+
     //function for generating random number user needs to hit to win//
     function numberToStart(min, max)
     {
         return Math.floor(Math.random() * (max - min) + min);
     }
 
-    //function for generation random numbers for crystals//
+    //function for generating random numbers for crystals//
     function crystalValues(min, max)
     {
         return Math.floor(Math.random() * (max - min) + min);
     }
 
-    //random number generation for all crystal values. placed in while loop so no duplicate values are appear.//
+    //random number generation for all crystal values. placed in while loop so no duplicate values appear.//
     function crystalValuesDupeCheck()
     {
         while(isRepeated)
