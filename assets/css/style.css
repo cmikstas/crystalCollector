@@ -20,6 +20,11 @@
     color: #4aaaa5
 }
 
+.image-stuff {
+    max-height: 160px;
+
+}
+
 /* Sticky Footer Classes */
 .footer-all {
     border-top: 4px solid #4aaaa5;

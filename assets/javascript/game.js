@@ -19,7 +19,7 @@ $(document).ready(function()
         //random number generation for number that needs to be hit//
         numberToWin = numberToStart(19, 121);
         console.log(numberToWin);
-        $("#randomNum").html(numberToWin);
+        $("#randomNum").html("Target Score: " + numberToWin);
         crystalValuesDupeCheck()
     });
 
@@ -56,13 +56,6 @@ $(document).ready(function()
        checkScore();
     });
 
-
-    //pseudo code//
-    //create a checkScore function if totalScore === target score win++ and reset the game. else if current score > target loss++, reset game.//
-    //reset can't reset wins/losses section//
-
-
-
     //**FUNCTION SECTION**//
 
     //function for generating random number user needs to hit to win//
@@ -71,13 +64,13 @@ $(document).ready(function()
         return Math.floor(Math.random() * (max - min) + min);
     }
 
-    //function for generating random numbers for crystals//
+    //function for generating random numbers for crystals
     function crystalValues(min, max)
     {
         return Math.floor(Math.random() * (max - min) + min);
     }
 
-    //random number generation for all crystal values. placed in while loop so no duplicate values appear.//
+    //random number generation for all crystal values. placed in while loop so no duplicate values appear.
     function crystalValuesDupeCheck()
     {
         while(isRepeated)
@@ -119,7 +112,7 @@ $(document).ready(function()
         }
     }
 
-    //function to check the score on each button click, track wins/losses, and reset the game depending on what happened//
+    //function to check the score on each button click, track wins/losses, and reset the game depending on what happened
     function checkScore()
     {
         if(totalScore === numberToWin)
@@ -132,6 +125,7 @@ $(document).ready(function()
             $("#randomNum").html(numberToWin);
             crystalValuesDupeCheck();
             totalScore = 0;
+            $("#scoreUpdate").html(0);
         }
 
         else if(totalScore > numberToWin)
@@ -144,6 +138,7 @@ $(document).ready(function()
             $("#randomNum").html(numberToWin);
             crystalValuesDupeCheck();
             totalScore = 0;
+            $("#scoreUpdate").html(0);
         }
     }
 });
