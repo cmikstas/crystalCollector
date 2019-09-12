@@ -21,8 +21,8 @@
 }
 
 .image-stuff {
-    max-height: 160px;
-
+    max-height: 155px;
+    display: block;
 }
 
 /* Sticky Footer Classes */

@@ -11,7 +11,7 @@ $(document).ready(function()
     var totalScore = 0;
     var isRepeated = true;
 
-    //Function to initate random number generation on page load//
+    //Function to initiate random number generation on page load//
     $(function()
     {
         console.log("init");
@@ -28,8 +28,9 @@ $(document).ready(function()
     {
        totalScore = totalScore + redCrystal;
        console.log(totalScore);
-       $("#scoreUpdate").html(totalScore);
+       $("#scoreUpdate").html("Total Score: " + totalScore);
        $("#redCrystal2").css('opacity', '1');
+       setTimeout(hideNumberRed, 1000);
        checkScore();
     });
 
@@ -37,8 +38,9 @@ $(document).ready(function()
     {
        totalScore = totalScore + blueCrystal;
        console.log(totalScore);
-       $("#scoreUpdate").html(totalScore);
+       $("#scoreUpdate").html("Total Score: " + totalScore);
        $("#blueCrystal2").css('opacity', '1');
+       setTimeout(hideNumberBlue, 1000);
        checkScore();
     });
 
@@ -46,8 +48,9 @@ $(document).ready(function()
     {
        totalScore = totalScore + yellowCrystal;
        console.log(totalScore);
-       $("#scoreUpdate").html(totalScore);
+       $("#scoreUpdate").html("Total Score: " + totalScore);
        $("#yellowCrystal2").css('opacity', '1');
+       setTimeout(hideNumberYellow, 1000);
        checkScore();
     });
 
@@ -55,8 +58,9 @@ $(document).ready(function()
     {
        totalScore = totalScore + greenCrystal;
        console.log(totalScore);
-       $("#scoreUpdate").html(totalScore);
+       $("#scoreUpdate").html("Total Score: " + totalScore);
        $("#greenCrystal2").css('opacity', '1');
+       setTimeout(hideNumberGreen, 1000);
        checkScore();
     });
 
@@ -131,10 +135,10 @@ $(document).ready(function()
             $("#win").html("Wins: " + wins);
             numberToWin = numberToStart(19, 121);
             console.log(numberToWin);
-            $("#randomNum").html(numberToWin);
+            $("#randomNum").html("Target Score: " + numberToWin);
             crystalValuesDupeCheck();
             totalScore = 0;
-            $("#scoreUpdate").html(0);
+            $("#scoreUpdate").html("Total Score: " + 0);
         }
 
         else if(totalScore > numberToWin)
@@ -144,10 +148,31 @@ $(document).ready(function()
             $("#loss").html("losses: " + losses);
             numberToWin = numberToStart(19, 121);
             console.log(numberToWin);
-            $("#randomNum").html(numberToWin);
+            $("#randomNum").html("Target Score: " + numberToWin);
             crystalValuesDupeCheck();
             totalScore = 0;
-            $("#scoreUpdate").html(0);
+            $("#scoreUpdate").html("Total Score: " + 0);
         }
+    }
+
+    //functions for setTimeout to hide crystal values after certain amount of time.
+    function hideNumberRed()
+    {
+        $("#redCrystal2").css('opacity', '0');
+    }
+
+    function hideNumberBlue()
+    {
+        $("#blueCrystal2").css('opacity', '0');
+    }
+
+    function hideNumberYellow()
+    {
+        $("#yellowCrystal2").css('opacity', '0');
+    }
+
+    function hideNumberGreen()
+    {
+        $("#greenCrystal2").css('opacity', '0');
     }
 });
