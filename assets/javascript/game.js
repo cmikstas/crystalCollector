@@ -24,35 +24,39 @@ $(document).ready(function()
     });
 
     //code that adds crystal values to total score//
-    $("#redCrystal").on("click", function()
+    $("#redCrystal1").on("click", function()
     {
        totalScore = totalScore + redCrystal;
        console.log(totalScore);
        $("#scoreUpdate").html(totalScore);
+       $("#redCrystal2").css('opacity', '1');
        checkScore();
     });
 
-    $("#blueCrystal").on("click", function()
+    $("#blueCrystal1").on("click", function()
     {
        totalScore = totalScore + blueCrystal;
        console.log(totalScore);
        $("#scoreUpdate").html(totalScore);
+       $("#blueCrystal2").css('opacity', '1');
        checkScore();
     });
 
-    $("#yellowCrystal").on("click", function()
+    $("#yellowCrystal1").on("click", function()
     {
        totalScore = totalScore + yellowCrystal;
        console.log(totalScore);
        $("#scoreUpdate").html(totalScore);
+       $("#yellowCrystal2").css('opacity', '1');
        checkScore();
     });
 
-    $("#greenCrystal").on("click", function()
+    $("#greenCrystal1").on("click", function()
     {
        totalScore = totalScore + greenCrystal;
        console.log(totalScore);
        $("#scoreUpdate").html(totalScore);
+       $("#greenCrystal2").css('opacity', '1');
        checkScore();
     });
 
@@ -76,21 +80,26 @@ $(document).ready(function()
         while(isRepeated)
         {
             isRepeated = false;
+
             redCrystal = crystalValues(1, 13);
             console.log(redCrystal);
-            $("#redCrystal").html(redCrystal + " Red Crystal");
+            $("#redCrystal2").html(redCrystal);
+            $("#redCrystal2").css('opacity', '0');
     
             blueCrystal = crystalValues(1, 13);
             console.log(blueCrystal);
-            $("#blueCrystal").html(blueCrystal + " Blue Crystal");
+            $("#blueCrystal2").html(blueCrystal);
+            $("#blueCrystal2").css('opacity', '0');
     
             yellowCrystal = crystalValues(1, 13);
             console.log(yellowCrystal);
-            $("#yellowCrystal").html(yellowCrystal + " Yellow Crystal");
+            $("#yellowCrystal2").html(yellowCrystal);
+            $("#yellowCrystal2").css('opacity', '0');
     
             greenCrystal = crystalValues(1, 13);
             console.log(greenCrystal);
-            $("#greenCrystal").html(greenCrystal + " Green Crystal");
+            $("#greenCrystal2").html(greenCrystal);
+            $("#greenCrystal2").css('opacity', '0');
     
             if(redCrystal === blueCrystal || redCrystal === greenCrystal || redCrystal === yellowCrystal)
             {
