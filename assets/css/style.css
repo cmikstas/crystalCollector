@@ -25,6 +25,11 @@
     display: block;
 }
 
+.crystalNumber {
+    
+    text-align: center;
+}
+
 /* Sticky Footer Classes */
 .footer-all {
     border-top: 4px solid #4aaaa5;
